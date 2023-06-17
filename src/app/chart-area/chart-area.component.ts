@@ -12,9 +12,15 @@ export class ChartAreaComponent implements OnInit {
 
   title = 'chartDemo';
 
-  ngOnInit()
+  ngOnInit() : void
   {
-    var myChart = new Chart("myChart", {
+    var myChart;
+
+    // (myChart!=null){
+    //   myChart.destroy();
+    // }
+    
+    myChart = new Chart("myChart", {
       type: 'bar',
       data: {
           labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -34,8 +40,11 @@ export class ChartAreaComponent implements OnInit {
           }
       }
   });
+
+
   }
 }
+
 
 
 
