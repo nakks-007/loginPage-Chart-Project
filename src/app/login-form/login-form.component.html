@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-content>
+        <div class="header">
+            <h2>LOGIN FORM</h2>
+        </div>
+        <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+            <div class="email-input">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput required>
+                </mat-form-field>
+            </div>
+
+            <div class="pw-input">
+                <mat-form-field appearance="outline" class="full-width">
+                  <mat-label>Password</mat-label>
+                  <input matInput formControlName="password" name="password" type="password" required pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$">
+                  <mat-error *ngIf="loginForm.value.password">Password must be a combination of lower-case, upper-case, numbers and at least 9 characters long</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div fxFlex="100%">
+                <button mat-flat-button color="primary">Log In</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
